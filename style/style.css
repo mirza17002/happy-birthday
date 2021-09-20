@@ -130,6 +130,14 @@ body {
   /* transform: scale(0.1); */
 }
 
+.hat {
+  margin-left: 20px;
+}
+
+.tag {
+  font-size: 8pt;
+}
+
 .baloons img {
   display: inline-block;
   position: absolute;
@@ -296,4 +304,11 @@ body {
     font-size: 1.5rem;
     font-weight: lighter;
   }
+}
+
+.lola-dp {
+  margin-top: 50px;
+  width: 200px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
