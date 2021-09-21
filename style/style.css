@@ -7,6 +7,12 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+.addon img {
+  width: 70px;
+  position: fixed;
+  /* margin-right: 10cm; */
+}
+
 .container {
   height: 100vh;
   width: 100vh;
@@ -238,6 +244,11 @@ body {
 #replay {
   z-index: 3;
   cursor: pointer;
+}
+
+#replay:hover {
+  background-color: #03fccf;
+  opacity: 70%;
 }
 
 /* Media Queries */

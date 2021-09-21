@@ -1,5 +1,8 @@
+
 // Animation Timeline
 const animationTimeline = () => {
+  var audio = new Audio('music.mp3');
+  audio.play();
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
@@ -277,23 +280,23 @@ const animationTimeline = () => {
 };
 
 // Import the data to customize and insert them into page
-const fetchData = () => {
-  fetch("customize.json")
-    .then(data => data.json())
-    .then(data => {
-      Object.keys(data).map(customData => {
-        if (data[customData] !== "") {
-          if (customData === "imagePath") {
-            document
-              .getElementById(customData)
-              .setAttribute("src", data[customData]);
-          } else {
-            document.getElementById(customData).innerText = data[customData];
-          }
-        }
-      });
-    });
-};
+// const fetchData = () => {
+//   fetch("customize.json")
+//     .then(data => data.json())
+//     .then(data => {
+//       Object.keys(data).map(customData => {
+//         if (data[customData] !== "") {
+//           if (customData === "imagePath") {
+//             document
+//               .getElementById(customData)
+//               .setAttribute("src", data[customData]);
+//           } else {
+//             document.getElementById(customData).innerText = data[customData];
+//           }
+//         }
+//       });
+//     });
+// };
 
 // Run fetch and animation in sequence
 const resolveFetch = () => {
