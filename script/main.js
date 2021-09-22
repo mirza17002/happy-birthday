@@ -1,7 +1,7 @@
 
 // Animation Timeline
 const animationTimeline = () => {
-  var audio = new Audio('music.mp3');
+  var audio = new Audio('./music.mp3');
   audio.play();
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
