@@ -1,8 +1,25 @@
-
 // Animation Timeline
 const animationTimeline = () => {
-  var audio = new Audio('./music.mp3');
-  audio.play();
+  // var audio = new Audio('./music.mp3');
+  // audio.play();
+  window.addEventListener('load', function () {
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var source = audioCtx.createBufferSource();
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'music.mp3');
+    xhr.responseType = 'arraybuffer';
+    xhr.addEventListener('load', function (r) {
+        audioCtx.decodeAudioData(
+                xhr.response, 
+                function (buffer) {
+                    source.buffer = buffer;
+                    source.connect(audioCtx.destination);
+                    source.loop = false;
+                });
+        source.start(0);
+    });
+    xhr.send();
+  });
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
